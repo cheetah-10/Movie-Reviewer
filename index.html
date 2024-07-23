@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Movie app</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+
+<body>
+    <div class="loadingScreen d-flex d-none  align-items-center justify-content-center">
+        <span class="loader"></span>
+    </div>
+
+
+    <div class="side-nav-menu d-flex position-fixed">
+        <div class="nav-tap d-flex flex-column justify-content-between">
+            <div class="links">
+                <ul class="list-unstyled fw-light">
+                    <li id="playing" onclick="searchByName('movie/now_playing')" class="position-relative">Now playing
+                    </li>
+                    <li id="Popular" onclick="searchByName('movie/popular')" class="position-relative">Popular</li>
+                    <li id="TopRated" onclick="searchByName('movie/top_rated')" class="position-relative">Top Rated</li>
+                    <li id="Trending" onclick="searchByName('trending/movie/day')" class="position-relative">Trending
+                    </li>
+                    <li id="Upcoming" onclick="searchByName('movie/upcoming')" class="position-relative">Upcoming</li>
+                    <li id="Contact" class="position-relative"><a href="#contact">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="nav-footer">
+                <div class="icons">
+                    <i class="fa-brands fa-facebook-f ps-3"></i>
+                    <i class="fa-brands fa-twitter ps-3"></i>
+                    <i class="fa-solid fa-globe ps-3"></i>
+                </div>
+                <div class="footer pt-3 mb-5">
+                    <p>Copyright © 2022 All Rights<br>
+                        Reserved.
+                        <br>
+                        Created by <a href="https://github.com/Develekko" class="link-danger fw-bold"
+                            target="_blank">Housam Ramadan</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-header d-flex flex-column justify-content-between p-2">
+            <img src="logo.png" alt="">
+            <i class="fa-solid fa-align-justify m-auto open-close-icon fs-4"></i>
+            <div class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-globe mb-1"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <section id="hero" class="container py-5">
+        <input id="search" type="search" placeholder="Search"
+            class="form-control w-50 mx-auto bg-transparent rounded-pill text-white shadow-none border-white px-3">
+        <div class="row g-4 mt-3 text-white" id="rowData">
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- \\\\\\\\\\\\\for contact///////////\ -->
+
+    <div id="contact" class="container">
+        <h2 class="fw-light">Contact US</h2>
+        <div class="text-center">
+            <div class="row g-3">
+                <div class="col-md-6 mt-0">
+                    <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validName"  placeholder="Enter your name" type="text">
+                    <p class="opacity-0 text-danger text-start mb-0">Invalid Name, Only characters allowed</p>
+                </div>
+                <div class="col-md-6 mt-0">
+                    <input oninput="validFotm(this)" class="bg-transparent  form-control w-100 border-0 border-bottom  py-2" id="validEmail" placeholder="Enter your email" type="email">
+                    <p class="opacity-0 text-danger text-start mb-0">Invalid email try example@domain.com</p>
+                </div>
+                <div class="col-md-6 mt-0">
+                    <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validPhone" placeholder="Enter your phone" type="text">
+                    <p class="opacity-0 text-danger text-start  mb-0">Invalid Phone number</p>
+                </div>
+                <div class="col-md-6 mt-0">
+                    <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validAge" placeholder="Enter your Age" type="number">
+                    <p class="opacity-0 text-danger text-start  mb-0">your age must be 16+</p>
+                </div>
+                <div class="col-md-6 mt-0">
+                    <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validPass" placeholder="Enter your Password" type="password">
+                    <p class="opacity-0 text-danger text-start  mb-0">Password must contains letters and numbers at least 8 characters</p>
+                    
+                </div>
+                <div class="col-md-6 mt-0">
+                    <input oninput="checkPass()" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="repass" placeholder="Repassword" type="password">
+                    <p class="opacity-0 text-danger text-start  mb-0">Password does not match</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn mt-3 mb-2 px-3 py-2">Submit</button>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
