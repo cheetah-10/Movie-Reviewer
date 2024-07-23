@@ -40,9 +40,9 @@ let rowData = document.getElementById('rowData');
 let search = document.getElementById('search');
 
 search.addEventListener('input', () => {
-    
+
     searchByName('discover/movie');
-    
+
 });
 async function searchByName(category) {
     var loading = document.querySelector('.loadingScreen');
@@ -54,7 +54,7 @@ async function searchByName(category) {
         let data = await response.json();
         allMovies = data.results;
         displayMovies(data.results);
-        
+
     } catch (error) {
         console.error("Error:", error);
     } finally {
@@ -77,7 +77,7 @@ function displayMovies(arr) {
         if (arr[i].original_title.toLowerCase().includes(searchValue.toLowerCase())) {
             cartoona += `
         
-            <div class="col-md-4 p-4 mt-0">
+            <div class="col-lg-4 col-md-6 p-4 mt-0">
                 <div class="item position-relative overflow-hidden rounded-2">
                     <div class="poster">
                         <img class="w-100" src="https://image.tmdb.org/t/p/w500${arr[i].poster_path}" alt="">
@@ -171,19 +171,34 @@ function checkPass() {
 
 
 
-function clearInputs(){
- nameInput.value =""
- emailInput.value = ''
- phoneInput.value = ''
- ageInput.value = ''
- passInput.value = ''
- repassInput.value ='' 
+function clearInputs() {
+    nameInput.value = ""
+    emailInput.value = ''
+    phoneInput.value = ''
+    ageInput.value = ''
+    passInput.value = ''
+    repassInput.value = ''
 
 }
 
 
 
 
+$(document).ready(function() {
+    $('#contact i').on('click', function() {
+        showHide();
+    });
 
-
-
+    function showHide() {
+        var $icon = $('#contact i');
+        var $input = $('#contact #validPass');
+        
+        if ($icon.hasClass('fa-eye')) {
+            $icon.removeClass('fa-eye').addClass('fa-eye-slash');
+            $input.attr('type', 'password');
+        } else {
+            $icon.removeClass('fa-eye-slash').addClass('fa-eye');
+            $input.attr('type', 'text');
+        }
+    }
+});

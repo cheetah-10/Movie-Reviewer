@@ -24,18 +24,18 @@
     </div>
 
 
-    <div class="side-nav-menu d-flex position-fixed">
+    <div class="side-nav-menu">
         <div class="nav-tap d-flex flex-column justify-content-between">
             <div class="links">
                 <ul class="list-unstyled fw-light">
-                    <li id="playing" onclick="searchByName('movie/now_playing')" class="position-relative">Now playing
+                    <li id="playing" onclick="searchByName('movie/now_playing') ,closeNav();" class="position-relative">Now playing
                     </li>
-                    <li id="Popular" onclick="searchByName('movie/popular')" class="position-relative">Popular</li>
-                    <li id="TopRated" onclick="searchByName('movie/top_rated')" class="position-relative">Top Rated</li>
-                    <li id="Trending" onclick="searchByName('trending/movie/day')" class="position-relative">Trending
+                    <li id="Popular" onclick="searchByName('movie/popular'), closeNav();" class="position-relative">Popular</li>
+                    <li id="TopRated" onclick="searchByName('movie/top_rated'),closeNav();" class="position-relative">Top Rated</li>
+                    <li id="Trending" onclick="searchByName('trending/movie/day'),closeNav();" class="position-relative">Trending
                     </li>
-                    <li id="Upcoming" onclick="searchByName('movie/upcoming')" class="position-relative">Upcoming</li>
-                    <li id="Contact" class="position-relative"><a href="#contact">Contact Us</a></li>
+                    <li id="Upcoming" onclick="searchByName('movie/upcoming'),closeNav();" class="position-relative">Upcoming</li>
+                    <li id="Contact" onclick="closeNav();" class="position-relative"><a href="#contact">Contact Us</a></li>
                 </ul>
 
             </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="nav-header d-flex flex-column justify-content-between p-2">
+        <div class="nav-header p-2">
             <img src="logo.png" alt="">
             <i class="fa-solid fa-align-justify m-auto open-close-icon fs-4"></i>
             <div class="d-flex flex-column align-items-center">
@@ -75,7 +75,7 @@
 
     <section id="hero" class="container py-5">
         <input id="search" type="search" placeholder="Search"
-            class="form-control border-2 w-50 mx-auto bg-transparent rounded-pill text-white shadow-none border-white px-3">
+            class="form-control border-2 mx-auto bg-transparent rounded-pill text-white shadow-none border-white px-3">
         <div class="row g-4 mt-3 text-white" id="rowData">
 
         </div>
@@ -110,11 +110,12 @@
                         <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validAge" placeholder="Enter your Age" type="number">
                         <p class="opacity-0 text-danger text-start  mb-0">your age must be 16+</p>
                     </div>
-                    <div class="col-md-6 mt-0">
-                        <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="validPass" placeholder="Enter your Password" type="password">
-                        <p class="opacity-0 text-danger text-start  mb-0">Password must contains letters and numbers at least 8 characters</p>
-                        
+                    <div class="col-md-6 mt-0 position-relative" id="contact">
+                        <input oninput="validFotm(this)" class="bg-transparent form-control w-100 border-0 border-bottom py-2" id="validPass" placeholder="Enter your Password" type="password">
+                        <p class="opacity-0 text-danger text-start mb-0">Password must contain letters and numbers at least 8 characters</p>
+                        <i class="fa-solid fa-eye-slash position-absolute mt-3 end-0 me-3 top-0"></i>
                     </div>
+                    
                     <div class="col-md-6 mt-0">
                         <input oninput="checkPass()" class="bg-transparent form-control w-100 border-0 border-bottom  py-2" id="repass" placeholder="Repassword" type="password">
                         <p class="opacity-0 text-danger text-start  mb-0">Password does not match</p>
