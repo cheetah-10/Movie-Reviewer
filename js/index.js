@@ -32,16 +32,17 @@ $('.nav-header .open-close-icon').on('click', function () {
 })
 
 
-// trending ---    let response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=eba8b9a7199efdcb0ca1f96879b83c44`);
 
 /////////////////////////
 
 
 let rowData = document.getElementById('rowData');
-let search = document.getElementById('search')
+let search = document.getElementById('search');
+
 search.addEventListener('input', () => {
-    displayMovies(allMovies);
-    // searchByName('search/movie');
+    
+    searchByName('discover/movie');
+    
 });
 async function searchByName(category) {
     var loading = document.querySelector('.loadingScreen');
@@ -53,6 +54,7 @@ async function searchByName(category) {
         let data = await response.json();
         allMovies = data.results;
         displayMovies(data.results);
+        
     } catch (error) {
         console.error("Error:", error);
     } finally {
@@ -169,8 +171,15 @@ function checkPass() {
 
 
 
+function clearInputs(){
+ nameInput.value =""
+ emailInput.value = ''
+ phoneInput.value = ''
+ ageInput.value = ''
+ passInput.value = ''
+ repassInput.value ='' 
 
-
+}
 
 
 
